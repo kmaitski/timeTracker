@@ -27,7 +27,11 @@ class Timer extends React.Component {
   stopTimer() {
     const endTime = new Date();
     const timeWorked = endTime - this.state.startTime;
-    $.post('/time/{this.state.currentCategory}', timeWorked, this.props.getIntialData);
+    const time = {
+      timeWorked: timeWorked,
+      category: this.state.currentCategory
+    };
+    $.post('/time', time);
   }
 
   changeCategory(category) {
