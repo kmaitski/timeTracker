@@ -25,8 +25,7 @@ class Timer extends React.Component {
   }
 
   stopTimer() {
-    const endTime = new Date();
-    const timeWorked = endTime - this.state.startTime;
+    const timeWorked = new Date() - this.state.startTime;
     const time = {
       timeWorked: timeWorked,
       category: this.state.currentCategory
